@@ -135,7 +135,7 @@ public class MashupPlanToBPELConverter {
 			BPELWorkflow = BPELWorkflow
 					+ "<bpel:assign validate=\"no\" name=\"Assign1\"><bpel:copy>   <bpel:from><bpel:literal><tns:DataMashupProcessResponse xmlns:tns=\"http://bpel.data_mashup.as.ipvs.informatik.uni_stuttgart.de\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">  <tns:result>tns:result</tns:result> </tns:DataMashupProcessResponse> </bpel:literal></bpel:from>   <bpel:to variable=\"output\" part=\"payload\"></bpel:to>   </bpel:copy>   <bpel:copy>   <bpel:from part=\"parameters\" variable=\"JoinPartnerLinkResponse\">   <bpel:query queryLanguage=\"urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0\">   <![CDATA[ns1:joinDataReturn]]>   </bpel:query>   </bpel:from>   <bpel:to part=\"payload\" variable=\"output\">   <bpel:query queryLanguage=\"urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0\"><![CDATA[tns:result]]></bpel:query>   </bpel:to>   </bpel:copy>   </bpel:assign>   <bpel:reply name=\"replyOutput\" partnerLink=\"client\" portType=\"tns:DataMashupProcess\" operation=\"process\" variable=\"output\" /></bpel:sequence></bpel:process>";
 
-			File file = new File("C:\\Users\\hirmerpl\\Documents\\Promotion\\Implementierungen\\Mashup_Challenge\\Data_Mashup\\BPELOutput.bpel");
+			File file = new File("/tmp/BPELOutput.bpel");
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 
 			writer.write(BPELWorkflow);
