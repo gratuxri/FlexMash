@@ -54,7 +54,6 @@
 	  	</fileset>
 	  	<classes dir="bin"/>
 	  </war>
-      <copy file="Data_Mashup.war" todir="C:\\Users\\hirmerpl\\Documents\\Promotion\\Implementierungen\\Tools\\apache-tomcat-8.0.23\\webapps"/>
    </target>
 
 </project>
